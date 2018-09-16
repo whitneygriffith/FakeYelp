@@ -16,6 +16,18 @@ class BusinessesViewController: UIViewController, UITableViewDataSource, UITable
     
     
     override func viewDidLoad() {
+        
+        let searchBar = UISearchBar()
+        searchBar.sizeToFit()
+        navigationItem.titleView = searchBar
+        
+        let filterButton = UIButton()
+        filterButton.backgroundColor = .red
+        filterButton.setTitle("Filter", for: .normal)
+        filterButton.setTitleColor(.white, for: .normal)
+        let filterBarButton = UIBarButtonItem(customView: filterButton)
+        navigationItem.leftBarButtonItem =  filterBarButton
+        
         super.viewDidLoad()
         
         tableView.delegate = self
